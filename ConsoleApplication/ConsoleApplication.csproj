@@ -66,66 +66,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bill.cs">
+    <Compile Include="Model\bill.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="customer.cs">
+    <Compile Include="Model\customer.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="expens.cs">
+    <Compile Include="Model\expens.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="medicine.cs">
+    <Compile Include="Model\medicine.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="med_category.cs">
+    <Compile Include="Model\med_category.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelTest.Context.cs">
+    <Compile Include="Model\ModelTest.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTest.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelTest.cs">
+    <Compile Include="Model\ModelTest.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelTest.Designer.cs">
+    <Compile Include="Model\ModelTest.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTest.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="staff.cs">
+    <Compile Include="Model\staff.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="supplier.cs">
+    <Compile Include="Model\supplier.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="sup_mobile_no.cs">
+    <Compile Include="Model\sup_mobile_no.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="ModelTest.edmx">
+    <EntityDeploy Include="Model\ModelTest.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelTest.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelTest.edmx.diagram">
+    <None Include="Model\ModelTest.edmx.diagram">
       <DependentUpon>ModelTest.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelTest.Context.tt">
+    <Content Include="Model\ModelTest.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelTest.edmx</DependentUpon>
       <LastGenOutput>ModelTest.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ModelTest.tt">
+    <Content Include="Model\ModelTest.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelTest.edmx</DependentUpon>
       <LastGenOutput>ModelTest.cs</LastGenOutput>

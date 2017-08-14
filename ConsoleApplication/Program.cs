@@ -1,7 +1,9 @@
-﻿using EntityFramework.Extensions;
+﻿using ConsoleApplication.Model;
+using EntityFramework.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 
 namespace ConsoleApplication
 {
@@ -95,7 +97,7 @@ namespace ConsoleApplication
         }
         public static List<customer> GetCustomers()
         {
-            var customers = new List<customer>
+            var customers = new List<Model.customer>
                     {
                         new customer()
                             {

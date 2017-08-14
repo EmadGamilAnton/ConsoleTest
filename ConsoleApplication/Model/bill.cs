@@ -7,16 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication
+namespace ConsoleApplication.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class expens
+    public partial class bill
     {
-        public int ext_id { get; set; }
-        public string ext_category { get; set; }
-        public Nullable<System.DateTime> ext_date { get; set; }
-        public Nullable<float> ext_amount { get; set; }
+        public int bill_id { get; set; }
+        public string sub_total { get; set; }
+        public Nullable<float> discount { get; set; }
+        public Nullable<float> total { get; set; }
+        public Nullable<int> staff_id { get; set; }
+    
+        public virtual staff staff { get; set; }
     }
 }

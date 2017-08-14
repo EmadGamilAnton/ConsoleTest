@@ -7,18 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication
+namespace ConsoleApplication.Model
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class customer
+    
+    public partial class sup_mobile_no
     {
-        [Key]
-        public long cust_id { get; set; }
-        public string cust_name { get; set; }
-        public string cust_address { get; set; }
-        public string cust_mobileno { get; set; }
+        public int sup_id { get; set; }
+        public string sup_mobile_no1 { get; set; }
+    
+        public virtual supplier supplier { get; set; }
     }
 }

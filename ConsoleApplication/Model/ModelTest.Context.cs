@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication
+namespace ConsoleApplication.Model
 {
     using System;
     using System.Data.Entity;

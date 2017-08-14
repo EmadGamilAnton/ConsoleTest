@@ -7,24 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication
+namespace ConsoleApplication.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class supplier
+    public partial class customer
     {
-        public supplier()
-        {
-            this.medicines = new HashSet<medicine>();
-        }
-    
-        public int sup_id { get; set; }
-        public string sup_name { get; set; }
-        public string sup_email { get; set; }
-        public string sup_address { get; set; }
-    
-        public virtual ICollection<medicine> medicines { get; set; }
-        public virtual sup_mobile_no sup_mobile_no { get; set; }
+        public long cust_id { get; set; }
+        public string cust_name { get; set; }
+        public string cust_address { get; set; }
+        public string cust_mobileno { get; set; }
     }
 }

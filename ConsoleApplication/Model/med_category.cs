@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication
+namespace ConsoleApplication.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class sup_mobile_no
+    public partial class med_category
     {
-        public int sup_id { get; set; }
-        public string sup_mobile_no1 { get; set; }
+        public int med_barcode { get; set; }
+        public string med_category_id { get; set; }
     
-        public virtual supplier supplier { get; set; }
+        public virtual medicine medicine { get; set; }
     }
 }
