@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DbOperation.cs" />
     <Compile Include="Model\bill.cs">
       <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
