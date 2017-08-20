@@ -9,9 +9,11 @@ namespace ConsoleApplication
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Classes.DbOperation dbObject = new Classes.DbOperation();
+
             for (;;)
             {         
                 Console.WriteLine();

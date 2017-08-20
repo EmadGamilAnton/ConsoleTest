@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication.Classes
 {
-    class DbOperation
+   public  class DbOperation
     {
         public void ViewRecords()
         {
@@ -28,7 +28,7 @@ namespace ConsoleApplication.Classes
             }
         }
 
-        public string InsertRecord(string custName,string custAddress)
+        public String InsertRecord(string custName,string custAddress)
         {
             var db = new pharmacydbEntities();
 
