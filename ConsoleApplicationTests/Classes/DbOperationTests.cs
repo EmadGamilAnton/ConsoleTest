@@ -30,5 +30,45 @@ namespace ConsoleApplication.Classes.Tests
                        
             Assert.AreEqual(customer,"EmadEmad");
         }
+        [TestMethod()]
+        public void UpdateRecordTest()
+        {
+            var data = new List<customer>
+            {
+                new customer { cust_name = "AAAAA",cust_address="AAA" }
+
+            }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<customer>>();
+            mockSet.As<IQueryable<customer>>().Setup(m => m.Provider).Returns(data.Provider);
+
+            var mockContext = new Mock<pharmacydbEntities>();
+            mockContext.Setup(c => c.customers).Returns(mockSet.Object);
+
+            var service = new DbOperation(mockContext.Object);
+            var customer = service.UpdateRecord("EmadEmad", "AAA");
+
+            Assert.AreEqual(customer, "EmadEmad");
+        }
+        [TestMethod()]
+        public void DeleteRecordTest()
+        {
+            var data = new List<customer>
+            {
+                new customer { cust_name = "AAAAA",cust_address="AAA" }
+
+            }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<customer>>();
+            mockSet.As<IQueryable<customer>>().Setup(m => m.Provider).Returns(data.Provider);
+
+            var mockContext = new Mock<pharmacydbEntities>();
+            mockContext.Setup(c => c.customers).Returns(mockSet.Object);
+
+            var service = new DbOperation(mockContext.Object);
+            var customer = service.DeleteRecord("EmadEmad");
+
+            Assert.AreEqual(customer, "EmadEmad");
+        }
     }
 }
