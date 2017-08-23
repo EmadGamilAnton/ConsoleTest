@@ -7,8 +7,19 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication.Classes
 {
-   public  class DbOperation
+    public class DbOperation
     {
+        public pharmacydbEntities _context;
+
+        public DbOperation(pharmacydbEntities context)
+        {
+            _context = context;
+        }
+
+        public DbOperation()
+        {
+        }
+
         public void ViewRecords()
         {
             var db = new pharmacydbEntities();
@@ -28,14 +39,14 @@ namespace ConsoleApplication.Classes
             }
         }
 
-        public String InsertRecord(string custName,string custAddress)
+        public String InsertRecord(string custName, string custAddress)
         {
             var db = new pharmacydbEntities();
 
             // Insert  
             try
             {
-                var cust = GetCustomers(custName,custAddress);
+                var cust = GetCustomers(custName, custAddress);
                 db.customers.AddRange(cust);
                 db.SaveChanges();
                 Console.WriteLine("Info saved");
@@ -47,7 +58,7 @@ namespace ConsoleApplication.Classes
             return custName;
         }
 
-        public string UpdateRecord(string custName,string newName)
+        public string UpdateRecord(string custName, string newName)
         {
             var db = new pharmacydbEntities();
 
@@ -91,7 +102,7 @@ namespace ConsoleApplication.Classes
 
         }
 
-        public static List<customer> GetCustomers(string custName,string custAddress)
+        public  List<customer> GetCustomers(string custName, string custAddress)
         {
             var customers = new List<customer>
                     {
@@ -103,7 +114,14 @@ namespace ConsoleApplication.Classes
             };
             return customers;
         }
+        public List<customer> GetAllcustomers()
+        {
+            var query = from b in _context.customers
+                        orderby b.cust_name
+                        select b;
 
+            return query.ToList();
+        }
     }
 }
 

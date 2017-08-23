@@ -1,5 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ConsoleApplication.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace ConsoleApplication.Classes.Tests
 {
@@ -9,14 +13,23 @@ namespace ConsoleApplication.Classes.Tests
         [TestMethod()]
         public void InsertRecordTest()
         {
-            Mock<DbOperation> obj = new Mock<DbOperation>();
-            obj.Setup(x => x.InsertRecord("EmadEmad2","AlexMenof"));//.Returns("EmadEmad2");
+            var data = new List<customer>
+            {
+                new customer { cust_name = "AAAAA",cust_address="AAA" }
+                
+            }.AsQueryable();
 
-            DbOperation obj2 = new DbOperation();
-            bool isInserted = bool.Parse( obj2.InsertRecord("EmadEmad2", "AlexMenof"));
-            
-            Assert.AreEqual(isInserted, true);
-            
+            var mockSet = new Mock<DbSet<customer>>();
+            mockSet.As<IQueryable<customer>>().Setup(m => m.Provider).Returns(data.Provider);
+
+            var mockContext = new Mock<pharmacydbEntities>();
+            mockContext.Setup(c => c.customers).Returns(mockSet.Object);
+
+            var service = new DbOperation(mockContext.Object);
+            var customer = service.GetCustomers("AAAAA","AAA");
+
+            Assert.AreEqual("AAAAA", customer[0]);
+
         }
     }
 }

@@ -11,12 +11,13 @@ namespace ConsoleApplication.Model
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class customer
     {
         public long cust_id { get; set; }
         public string cust_name { get; set; }
         public string cust_address { get; set; }
         public string cust_mobileno { get; set; }
+        public virtual List<customer> customerv {get;set;}
     }
 }

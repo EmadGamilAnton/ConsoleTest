@@ -18,6 +18,7 @@ namespace ConsoleApplication.Model
         public pharmacydbEntities()
             : base("name=pharmacydbEntities")
         {
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -26,7 +27,7 @@ namespace ConsoleApplication.Model
         }
     
         public DbSet<bill> bills { get; set; }
-        public DbSet<customer> customers { get; set; }
+        public virtual DbSet<customer> customers { get; set; }
         public DbSet<expens> expenses { get; set; }
         public DbSet<med_category> med_category { get; set; }
         public DbSet<medicine> medicines { get; set; }
