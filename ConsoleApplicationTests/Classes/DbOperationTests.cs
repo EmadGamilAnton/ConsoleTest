@@ -25,11 +25,10 @@ namespace ConsoleApplication.Classes.Tests
             var mockContext = new Mock<pharmacydbEntities>();
             mockContext.Setup(c => c.customers).Returns(mockSet.Object);
 
-            var service = new DbOperation(mockContext.Object);
-            var customer = service.GetCustomers("AAAAA","AAA");
-
-            Assert.AreEqual("AAAAA", customer[0]);
-
+            var service  = new DbOperation(mockContext.Object);
+            var customer = service.InsertRecord("EmadEmad","AAA");
+                       
+            Assert.AreEqual(customer,"EmadEmad");
         }
     }
 }
